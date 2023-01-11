@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         if (in_array($request->user()->id_level, ['level-001'])) {
-            $penggunaanListriks = PenggunaanListrik::paginate(19);
+            $penggunaanListriks = PenggunaanListrik::paginate(10);
 
             return view('dashboard-admin.index', compact(['penggunaanListriks']));
         } else {
