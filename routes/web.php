@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AddPenggunaanListrikController;
+use App\Http\Controllers\PenggunaanListrikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
@@ -22,7 +22,9 @@ Route::group(['middleware' => ['auth:useradmin,pelanggan']], function () {
 });
 
 Route::group(['middleware' => ['auth:useradmin,pelanggan', 'cektypeuser:level-001']], function () {
-    Route::get('/add-penggunaan-listrik', [AddPenggunaanListrikController::class, 'index'])->name('addPenggunaan');
+    Route::get('/add-penggunaan-listrik', [PenggunaanListrikController::class, 'index'])->name('addPenggunaan');
+    Route::post('/add-penggunaan-listrik', [PenggunaanListrikController::class, 'insertPenggunaanListrik']);
+    Route::post('/delete-penggunaan-listrik', [PenggunaanListrikController::class, 'deletePenggunaanListrikById']);
 });
 
 Route::post('/authentication', [AuthenticationController::class, 'authentication'])->middleware('guest');

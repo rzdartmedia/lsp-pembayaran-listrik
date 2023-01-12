@@ -15,7 +15,7 @@
             <div class="col-12">
                 <div class="row justify-content-center mt-5">
                     <div class="col-lg-4 col-sm-12">
-                        @include('add-penggunaan-listrik.forms')
+                        @include('edit-penggunaan-listrik.forms')
                     </div>
                 </div>
             </div>
