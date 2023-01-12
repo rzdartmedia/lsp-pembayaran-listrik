@@ -21,7 +21,7 @@ class DashboardController extends Controller
 
             // menampilkan halaman dahboard yang ada di file dengan data penggunaanListriks
             // resource->views->dashboard-admin->index.blade.php
-            return view('dashboard-admin.index', compact(['penggunaanListriks']));
+            return view('dashboard-admin.index', compact(['penggunaanListrikss']));
         } else {
             // kalau user login tidak sebagai admin
 
