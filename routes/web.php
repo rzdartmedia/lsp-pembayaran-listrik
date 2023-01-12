@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth:useradmin,pelanggan', 'cektypeuser:level-00
     Route::get('/add-penggunaan-listrik', [PenggunaanListrikController::class, 'index'])->name('addPenggunaan');
     Route::post('/add-penggunaan-listrik', [PenggunaanListrikController::class, 'insertPenggunaanListrik']);
     Route::post('/delete-penggunaan-listrik', [PenggunaanListrikController::class, 'deletePenggunaanListrikById']);
+    Route::get('/get-update-penggunaan-listrik/{id}', [PenggunaanListrikController::class, 'getUpdatePenggunaanListrik']);
+    Route::post('/update-penggunaan-listrik', [PenggunaanListrikController::class, 'updateDataPenggunaanListrik']);
 });
 
 Route::post('/authentication', [AuthenticationController::class, 'authentication'])->middleware('guest');
